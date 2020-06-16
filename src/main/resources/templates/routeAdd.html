@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{pieces/wonav}">
+</head>
+<body>
+<form id="myForm" th:action="@{/route}"
+      th:object="${route}" method="POST">
+    <input type="hidden" th:field="*{routeid}"/>
+    <div class="form-group">
+        <label>Enter the startpoint:</label>
+        <input type="text" th:field="*{startpoint}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the endpoint:</label>
+        <input type="text" th:field="*{endpoint}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the distance:</label>
+        <input type="text" th:field="*{distance}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</body>
+</html>

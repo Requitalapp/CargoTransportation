@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{pieces/wonav}">
+</head>
+<body>
+<form id="myForm" th:action="@{/ord}"
+      th:object="${ord}" method="POST">
+    <input type="hidden" th:field="*{ordid}"/>
+    <label>Enter the manage:</label>
+    <select class="form-control" th:field="*{manage}">
+        <option th:each="type : ${manage}"
+                th:value="${type.manageid}"
+                th:text="${type}"></option>
+    </select><br/>
+    <label>Enter the client:</label>
+    <select class="form-control" th:field="*{client}">
+        <option th:each="type : ${client}"
+                th:value="${type.clientid}"
+                th:text="${type}"></option>
+    </select><br/>
+    <label>Enter the route:</label>
+    <select class="form-control" th:field="*{route}">
+        <option th:each="type : ${route}"
+                th:value="${type.routeid}"
+                th:text="${type}"></option>
+    </select><br/>
+    <label>Enter the cargo:</label>
+    <select class="form-control" th:field="*{cargo}">
+        <option th:each="type : ${cargo}"
+                th:value="${type.cargoid}"
+                th:text="${type}"></option>
+    </select><br/>
+    <label>Enter the driver:</label>
+    <select class="form-control" th:field="*{driver}">
+        <option th:each="type : ${driver}"
+                th:value="${type.driverid}"
+                th:text="${type}"></option>
+    </select><br/>
+    <div class="form-group">
+        <label>Enter the orderdate:</label>
+        <input type="date" th:field="*{orderdate}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the deliverydate:</label>
+        <input type="date" th:field="*{deliverydate}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</body>
+</html>

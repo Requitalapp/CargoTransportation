@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:insert="~{pieces/fornav}">
+</head>
+<head>
+    <title>CLIENT</title>
+    <script type="text/javascript" src="/js/client.js"></script>
+</head>
+<body>
+<div>
+    <br/><br/><br/>
+    <div class="table-title" style="text-align: center;">
+        <div class="row">
+            <div class="col-sm-8"><h1>CLIENT <b>DETAILS</b></h1></div>
+            <div class="col-sm-4">
+                <button type="button" id="addButton" class="btn btn-info" sec:authorize="hasRole('ADMIN')"><i class="fa fa-plus"></i> Add New</button>
+            </div>
+        </div>
+        <br/>
+    </div>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class = "thead-dark">
+        <tr>
+            <th>id</th>
+            <th>FULLNAME</th>
+            <th>PHONENUMBER</th>
+            <th>ADDRESS</th>
+            <th sec:authorize="hasRole('ADMIN')">ACTIONS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client : ${data}" >
+            <td class="id" th:text="${client.clientid}"></td>
+            <td th:text="${client.fullname}"></td>
+            <td th:text="${client.phonenumber}"></td>
+            <td th:text="${client.address}"></td>
+            <td sec:authorize="hasRole('ADMIN')">
+                <button id="editButton" type="button" class="btn btn-primary"><i class="fas fa-plus-circle"></i></button>&nbsp;&nbsp;
+                <button id="deleteButton" type="button" class="btn btn-primary"><i class="fas fa-times-circle"></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editing</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{pieces/wonav}">
+</head>
+<body>
+<form id="myForm" th:action="@{/cargo}"
+      th:object="${cargo}" method="POST">
+    <input type="hidden" th:field="*{cargoid}"/>
+    <div class="form-group">
+        <label>Enter the cargotype:</label>
+        <input type="text" th:field="*{cargotype}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the cargocost:</label>
+        <input type="text" th:field="*{cargocost}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the volume:</label>
+        <input type="text" th:field="*{volume}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the weight:</label>
+        <input type="text" th:field="*{weight}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</body>
+</html>

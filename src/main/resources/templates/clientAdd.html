@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{pieces/wonav}">
+</head>
+<body>
+<form id="myForm" th:action="@{/client}"
+      th:object="${client}" method="POST">
+    <input type="hidden" th:field="*{clientid}"/>
+    <div class="form-group">
+        <label>Enter the fullname:</label>
+        <input type="text" th:field="*{fullname}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the phonenumber:</label>
+        <input type="text" th:field="*{phonenumber}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Enter the address:</label>
+        <input type="text" th:field="*{address}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+</body>
+</html>
