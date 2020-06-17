@@ -30,7 +30,7 @@
             <th>R.ENDPOINT</th>
             <th>C.VOLUME</th>
             <th>D.PHONE</th>
-            <th>D.V.WVOLUME</th>
+            <th>D.C.TYPE</th>
             <th>ORDERDATE</th>
             <th>DELIVERYDATE</th>
             <th sec:authorize="hasRole('ADMIN')" style="width: 133px">ACTIONS</th>
@@ -45,7 +45,7 @@
             <td th:text="${ord.route.endpoint}"></td>
             <td th:text="${ord.cargo.volume}"></td>
             <td th:text="${ord.driver.phonenumber}"></td>
-            <td th:text="${ord.driver.vehicle.wagonvolume}"></td>
+            <td th:text="${ord.cargo.cargotype}"></td>
             <td th:text="${ord.orderdate}"></td>
             <td th:text="${ord.deliverydate}"></td>
             <td sec:authorize="hasRole('ADMIN')">
