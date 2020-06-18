@@ -5,6 +5,8 @@ import CargoTransportation.Client.Client;
 import CargoTransportation.Driver.Driver;
 import CargoTransportation.Manage.Manage;
 import CargoTransportation.Route.Route;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -36,7 +38,6 @@ public class Ord {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date deliverydate;
     private int activesign;
-
 
     protected Ord() {
     }

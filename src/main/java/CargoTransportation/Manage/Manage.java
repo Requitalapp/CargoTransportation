@@ -1,6 +1,10 @@
 package CargoTransportation.Manage;
 
+
+import CargoTransportation.Ord.Ord;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "manage")
@@ -11,6 +15,7 @@ public class Manage {
     private String fullname;
     private String phonenumber;
     public int activesign;
+
 
     protected Manage() {
     }
@@ -57,4 +62,6 @@ public class Manage {
     public String toString() {
         return String.format(fullname + "; " + phonenumber);
     }
+
+
 }
